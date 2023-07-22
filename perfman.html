@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SunVibe Goal Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .new-goal-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .goal-section {
+            margin-bottom: 30px;
+            border: 1px solid #003946;
+            padding: 20px;
+            background-color: #ffcb05;
+            border-radius: 10px;
+        }
+        .goal-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #003946;
+        }
+        .goal-details {
+            font-size: 16px;
+            color: #003946;
+        }
+        .goal-status {
+            font-size: 18px;
+            font-weight: bold;
+            color: #003946;
+        }
+        .goal-action-plan {
+            margin-top: 10px;
+            font-size: 16px;
+            list-style-type: square;
+            color: #003946;
+        }
+        .goal-action-item {
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+        .submit-button {
+            background-color: #003946;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .submit-button:hover {
+            background-color: #002b33;
+        }
+
+        .back-button {
+            background-color: #003946;
+            color: #fff;
+            border: none;
+            width: 250px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #001f2e;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="font-weight: bold;">Welcome to SunVibe's Goal Tracker</h2>
+    <p>An essential tool to help you stay focused and achieve your personal and professional objectives within Sun Life. Let's work together to make your journey at Sun Life fulfilling and rewarding.</p>
+
+    <p>Use the form below to add a new goal to your list.</p>
+    <div class="text-center">
+        <button class="submit-button" onclick="toggleNewGoal()">Create a New Goal</button>
+    </div>
+
+    <div class="new-goal-section" id="newGoalSection">
+        <h4 style="font-weight: bold;">New Goal</h4>
+        <form>
+            <label for="goalTitle">Goal Title:</label>
+            <input type="text" id="goalTitle" name="goalTitle" required><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea><br>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required><br>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required><br>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select><br>
+
+            <label>Action Plan:</label><br>
+            <ul>
+                <li><input type="checkbox" name="actionPlan" value="Research Certification Programs">Research Certification Programs: Identify reputable institutions and certification programs that offer advanced life insurance planning courses.</li>
+                <li><input type="checkbox" name="actionPlan" value="Select Suitable Course">Select Suitable Course: Choose the most suitable certification course that aligns with my professional goals and expertise.</li>
+                <li><input type="checkbox" name="actionPlan" value="Enroll in the Program">Enroll in the Program: Complete the necessary registration and enrollment process for the chosen certification program.</li>
+                <li><input type="checkbox" name="actionPlan" value="Study and Prepare">Study and Prepare: Dedicate sufficient time each week to study course materials and prepare for exams and assessments.</li>
+                <li><input type="checkbox" name="actionPlan" value="Attend Webinars and Workshops">Attend Webinars and Workshops: Participate in webinars and workshops provided by the certification program to gain practical insights.</li>
+                <li><input type="checkbox" name="actionPlan" value="Take Mock Exams">Take Mock Exams: Take mock exams to assess my knowledge and identify areas for improvement.</li>
+                <li><input type="checkbox" name="actionPlan" value="Final Exam">Final Exam: Successfully pass the final exam to obtain the Advanced Life Insurance Planning certification.</li>
+            </ul>
+
+            <label>Measurement and Tracking:</label><br>
+            <ul>
+                <li><input type="checkbox" name="measurement" value="Regularly review my progress">Regularly review my progress against the action plan and ensure each step is completed on time.</li>
+                <li><input type="checkbox" name="measurement" value="Keep track of the hours">Keep track of the hours dedicated to studying and preparing for the certification.</li>
+                <li><input type="checkbox" name="measurement" value="Monitor the scores from mock exams">Monitor the scores from mock exams and assess my readiness for the final certification exam.</li>
+            </ul>
+            <div class="text-center">
+                <button type="submit" class="submit-button">Submit Goal</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <h4 style="font-weight: bold;">Goal and Progress Tracker</h4>
+    <h5>Your Active Goals</h5>
+    <div class="goal-section">
+        <div class="goal-title">Attain Certification in Advanced Life Insurance Planning</div>
+        <div class="goal-details">
+            Goal Title: Attain Certification in Advanced Life Insurance Planning<br>
+            Description: As a dedicated Life Insurance Advisor at Sun Life, I aim to enhance my expertise and provide the best possible service to my clients. To achieve this, I have set a goal to attain certification in Advanced Life Insurance Planning.<br>
+            Start Date: 15th August 2023<br>
+            End Date: 30th November 2023<br>
+            Priority: High
+        </div>
+        <div class="goal-action-plan">
+            Action Plan:
+            <ul>
+                <li class="goal-action-item">Research Certification Programs: Identify reputable institutions and certification programs that offer advanced life insurance planning courses.</li>
+                <li class="goal-action-item">Select Suitable Course: Choose the most suitable certification course that aligns with my professional goals and expertise.</li>
+                <li class="goal-action-item">Enroll in the Program: Complete the necessary registration and enrollment process for the chosen certification program.</li>
+                <li class="goal-action-item">Study and Prepare: Dedicate sufficient time each week to study course materials and prepare for exams and assessments.</li>
+                <li class="goal-action-item">Attend Webinars and Workshops: Participate in webinars and workshops provided by the certification program to gain practical insights.</li>
+                <li class="goal-action-item">Take Mock Exams: Take mock exams to assess my knowledge and identify areas for improvement.</li>
+                <li class="goal-action-item">Final Exam: Successfully pass the final exam to obtain the Advanced Life Insurance Planning certification.</li>
+            </ul>
+        </div>
+        <div class="goal-details">
+            Measurement and Tracking:
+            <ul>
+                <li class="goal-action-item">Regularly review my progress against the action plan and ensure each step is completed on time.</li>
+                <li class="goal-action-item">Keep track of the hours dedicated to studying and preparing for the certification.</li>
+                <li class="goal-action-item">Monitor the scores from mock exams and assess my readiness for the final certification exam.</li>
+            </ul>
+        </div>
+        <div class="goal-status">Goal: [In Progress]</div>
+        <div class="goal-details">
+            I am actively working towards my goal of attaining certification in Advanced Life Insurance Planning. By doing so, I will be better equipped to provide expert advice and customized solutions to my clients, further establishing myself as a trusted and knowledgeable Life Insurance Advisor at Sun Life. I am excited about this opportunity to grow professionally and elevate the level of service I offer to clients.
+        </div>
+    </div>
+
+    <h5>Your Completed Goals</h5>
+    <div class="goal-section">
+        <div class="goal-title">Increase Life Insurance Sales by 20% within the Next Quarter</div>
+        <div class="goal-details">
+            Goal Title: Increase Life Insurance Sales by 20% within the Next Quarter<br>
+            Description: As a Life Insurance Advisor at Sun Life, my primary objective is to help individuals and families secure their financial futures through comprehensive life insurance coverage. To drive business growth and better serve my clients, I aim to increase life insurance sales by 20% within the next quarter.<br>
+            Start Date: 1st April 2023<br>
+            End Date: 30th June 2023<br>
+            Priority: High
+        </div>
+        <div class="goal-action-plan">
+            Action Plan:
+            <ul>
+                <li class="goal-action-item">Client Outreach and Prospecting: Identified and targeted potential clients who expressed interest in life insurance or were likely to benefit from it. Engaged in warm-calling, referrals, and networking events to expand my client base.</li>
+                <li class="goal-action-item">Personalized Consultations: Conducted in-depth, personalized consultations with clients to understand their financial needs and offered tailored life insurance solutions.</li>
+                <li class="goal-action-item">Educational Workshops and Webinars: Organized educational workshops and webinars to create awareness about the importance of life insurance.</li>
+                <li class="goal-action-item">Promote Policy Reviews: Scheduled policy reviews with existing clients to ensure their coverage aligns with their current life circumstances.</li>
+                <li class="goal-action-item">Team Up with Agents: Collaborated with other insurance agents within the organization to leverage cross-selling opportunities.</li>
+                <li class="goal-action-item">Digital Marketing Campaign: Implemented a targeted digital marketing campaign to reach potential clients through social media, email newsletters, and online advertisements.</li>
+                <li class="goal-action-item">Continuous Learning and Certification: Attended relevant training sessions and attained certifications to stay updated on the latest industry trends and products.</li>
+            </ul>
+        </div>
+        <div class="goal-details">
+            Measurement and Tracking:
+            <ul>
+                <li class="goal-action-item">Tracked monthly life insurance sales and compared them to the previous quarter's performance.</li>
+                <li class="goal-action-item">Monitored the conversion rate of leads generated through prospecting and marketing efforts.</li>
+                <li class="goal-action-item">Conducted regular reviews of individual sales performance to identify areas for improvement.</li>
+            </ul>
+        </div>
+        <div class="goal-status">Goal: [Completed]</div>
+        <div class="goal-details">
+            I successfully achieved my goal of increasing life insurance sales by 20% within the specified timeline. The action plan and reward system kept me focused and motivated throughout the process. This achievement not only boosts my personal growth but also contributes significantly to the success and reputation of Sun Life as a trusted life insurance provider.
+        </div>
+    </div>
+    <a href="sunlife.html" class="back-button">Go Back to Homepage</a>
+
+    <script>
+        function toggleNewGoal() {
+            var newGoalSection = document.getElementById("newGoalSection");
+            if (newGoalSection.style.display === "none") {
+                newGoalSection.style.display = "block";
+            } else {
+                newGoalSection.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

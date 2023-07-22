@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffefaa;
+}
+.bodyclass {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+}
+
+.introduction {
+    margin: 20px 50px;
+    text-align: justify;
+}
+
+h2.intro {
+    font-weight: bold;
+}
+
+span.italic {
+    font-style: italic;
+}
+
+.mission, .vision {
+    border: 5px solid #ffffff;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #ffcb05;
+}
+
+.key-feature {
+    padding: 30px;
+}
+
+.key-feature img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.key-feature h3 {
+    font-weight: bold;
+}
+
+.key-feature p {
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #003946;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005b70;
+    color: #fff;
+}
+
+.container {
+    background-color: #ffcb05; 
+    max-width: 1000px;
+    margin: auto;
+}
